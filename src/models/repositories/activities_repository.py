@@ -17,7 +17,7 @@ class ActivitiesRepository:
         activity_infos['id'],
         activity_infos['trip_id'],
         activity_infos['title'],
-        activity_infos['occur_at']
+        activity_infos['occurs_at']
       )
     )
     self.__conn.commit()

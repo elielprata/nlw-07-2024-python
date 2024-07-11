@@ -1,4 +1,5 @@
 from typing import Dict
+from src.drivers.email_sender import send_email
 import uuid
 
 from src.models.repositories.trips_repository import TripsRepository
@@ -26,6 +27,7 @@ class TripCreator:
             'id': str(uuid.uuid4())
           })
 
+      send_email([body['owner_email']], f'localhost:3000/trips/{trip_id}/confirm')
       return {
         'body': { 'id': trip_id },
         'status_code': 201
