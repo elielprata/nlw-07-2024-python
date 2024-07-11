@@ -32,17 +32,3 @@ class EmailsToInviteRepository:
     )
     emails = cursor.fetchall()
     return emails
-
-    cursor = self.__conn.cursor()
-    cursor.execute(
-      '''
-        UPDATE trips
-        SET
-          status = 1
-        WHERE 
-          id = ?
-      ''', (
-        trip_id,
-      )
-    )
-    self.__conn.commit()
